@@ -1,0 +1,10 @@
+{
+    "tag": "surgeuszepit4ro",
+    "connectorUID": 1,
+    "meterValue": 1,
+    "transactionId": 1,
+    "ConnectorStatus": "Available",
+    "incrementValue": 1,
+    "timeInterval": 1000,
+    "counter": 60
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCPP 1.6 Simulator</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- CSS-->
+    <link rel="stylesheet" href="style.css">
+
+
+
+</head>
+
+<body>
+    <div id="main-container" class="container">
+        <button id="settings-btn" class="btn-primary btn-gray">Settings</button>
+        <button id="disconnect-btn" class="btn-primary btn-red">Disconnect</button>
+
+        <div class="container">
+
+            <div id="main-content">
+                <h1>Welcome to OCPP 1.6 Simulator</h1>
+                <button id="connect-btn" class="btn-primary btn-gray">Connect</button>
+            </div>
+            <div id="simulator-content" class="content-box">
+                
+                <div class="inputs">
+                    <div class="input-grid">
+                        <div>
+                            <label class="label-input" for="tag">Tag:</label>
+                            <input class="input-field" onchange="changeSettings()" type="text" id="tag" value="surgeuszepit4ro">
+                        </div>
+                        <div>
+                            <label class="label-input" for="connectorUID">Connector UID:</label>
+                            <input class="input-field" onchange="changeSettings()" type="text" id="connectorUID" value="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="button-grid">
+                    <button class="btn-secondary btn-green" id="authorize-btn">Authorize</button>
+                    <button class="btn-secondary btn-green" id="heartbeat-btn">Heartbeat</button>
+                    <button class="btn-secondary btn-green" id="start-transaction-btn">Start Transaction</button>
+                    <button class="btn-secondary btn-green" id="stop-transaction-btn">Stop Transaction</button>
+                </div>
+                <div class="inputs">
+                    <div class="input-grid">
+                        <div>
+                            <label class="label-input" for="meterValue">Meter Value:</label>
+                            <input class="input-field" onchange="changeSettings()" type="text" id="meterValue" value="1">
+                        </div>
+                        <div>
+                            <label class="label-input" for="transactionId">transactionId:</label>
+                            <input class="input-field" onchange="changeSettings()" type="text" id="transactionId" value="1">
+                        </div>
+                        <div>
+                            <label class="label-input" for="ConnectorStatus">Connector Status:</label>
+                            <select class="input-field" onchange="changeSettings()" name="ConnectorStatus" id="ConnectorStatus">
+                                <option value="Available">Available</option>
+                                <option value="Preparing">Preparing</option>
+                                <option value="Charging">Charging</option>
+                                <option value="SuspendedEV">SuspendedEV</option>
+                                <option value="SuspendedEVSE">SuspendedEVSE</option>
+                                <option value="Finishing">Finishing</option>
+                                <option value="Reserved">Reserved</option>
+                                <option value="Faulted">Faulted</option>
+                                <option value="Offline">Offline</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-grid">
+                        <div>
+                            <label class="label-input" for="incrementValue">Increment Value:</label>
+                            <input class="input-field" onchange="changeSettings()" type="text" id="incrementValue" value="1">
+                        </div>
+                        <div>
+                            <label class="label-input" for="timeInterval">Time Interval:</label>
+                            <input class="input-field" onchange="changeSettings()" type="text" id="timeInterval" value="1000">
+                        </div>
+                        <div>
+                            <label class="label-input" for="counter">Counter</label>
+                            <input class="input-field" onchange="changeSettings()" type="text" id="counter" value="60">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="button-grid">
+                    <button class="btn-secondary btn-green" id="send-meter-values-btn">Send Meter Values</button>
+                    <button class="btn-secondary btn-green" id="send-meter-values-loop-btn">Send Meter Values Loop</button>
+                    <button class="btn-secondary btn-green" id="status-notification-btn">Status Notification</button>
+                    <button class="btn-secondary btn-green" id="data-transfer-btn">Data Transfer</button>
+                </div>
+                <div id="status-indicator" class="indicator"></div>
+
+            </div>
+        </div>
+
+        <!-- Alert Box -->
+        <div class="alert-box" id="alertBox">
+            Connected successfully
+        </div>
+
+        <!-- Overlay-->
+        <div id="overlay"></div>
+        <!-- The popup div -->
+        <div id="settings-popup">
+            <h2 style="margin-bottom: 5px;">Settings</h2>
+            <div id="settings-data">
+                <!-- Inputs Come Here-->
+            </div>
+            <button id="save-btn" class="btn-primary btn-gray">Save</button>
+            <button id="close-btn" class="btn-primary btn-gray">Close</button>
+        </div>
+
+        <!-- jQuery CDN -->
+        <script src="https://code.jquery.com/jquery-3.7.0.slim.js"
+            integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
+        <!-- Custom Script -->
+        <script src="script.js"></script>
+</body>
+
+</html>
